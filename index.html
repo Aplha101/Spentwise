@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Finance Tracker</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen">
+
+  <!-- NAVBAR -->
+  <nav class="flex justify-between items-center px-8 py-5">
+    <h1 class="text-xl font-semibold text-blue-600">Finance Tracker</h1>
+
+    <a href="auth.html"
+      class="bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 rounded-lg text-sm">
+      Login
+    </a>
+  </nav>
+
+  <!-- HERO -->
+  <div class="flex flex-col items-center justify-center text-center px-6 mt-16">
+
+    <h1 class="text-5xl font-bold text-gray-800 mb-6 leading-tight">
+      Take Control of Your <span class="text-blue-600">Money</span>
+    </h1>
+
+    <p class="text-gray-600 text-lg mb-8 max-w-xl">
+      Track income, manage expenses, and get insights into your spending —
+      all in one simple and powerful dashboard.
+    </p>
+
+    <a href="auth.html"
+      class="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-xl text-lg shadow-md transition">
+      Get Started
+    </a>
+
+  </div>
+
+  <!-- FEATURE CARDS -->
+  <div class="mt-20 px-6 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+    <div class="bg-white p-6 rounded-xl shadow-sm text-center">
+      <h3 class="font-semibold text-blue-600 mb-2">Track Everything</h3>
+      <p class="text-gray-500 text-sm">Easily log your income and expenses</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl shadow-sm text-center">
+      <h3 class="font-semibold text-green-600 mb-2">See Your Balance</h3>
+      <p class="text-gray-500 text-sm">Real-time updates of your savings</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl shadow-sm text-center">
+      <h3 class="font-semibold text-blue-500 mb-2">Smart Insights</h3>
+      <p class="text-gray-500 text-sm">Understand where your money goes</p>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="text-center text-gray-400 text-sm mt-16 mb-6">
+    Team- Spent-Wise | Leader - Avika Bajpai
+  </div>
+
+<script>
+const user = localStorage.getItem("user");
+
+if(user){
+  window.location.href = "dashboard.html";
+}
+</script>
+
+</body>
+</html>

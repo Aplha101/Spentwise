@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="bg-blue-50 min-h-screen">
+
+ <nav class="bg-white shadow-md px-6 py-4 flex justify-between items-center">
+  
+  <h1 class="text-xl font-bold text-blue-600">Spent-Wise</h1>
+
+  <div class="flex items-center gap-4">
+    <p class="text-gray-600">
+      👤 <span id="username"></span>
+    </p>
+
+    <button onclick="logout()" 
+      class="text-white font-semibold bg-red-500 hover:bg-red-600 
+      focus:ring-4 focus:ring-red-300 shadow-sm rounded-lg text-sm px-4 py-2">
+      Logout
+    </button>
+  </div>
+
+</nav>
+
+  <div class="p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+
+    <div class="space-y-6">
+
+      <div class="bg-white p-5 rounded-xl shadow-sm">
+        <h2 class="font-semibold text-green-600 mb-3">Add Income</h2>
+
+        <input id="incomeAmount" type="number" placeholder="Amount"
+          class="w-full mb-3 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-300"/>
+
+        <button onclick="addIncome()"
+          class="w-full bg-green-500 hover:bg-green-600 text-white py-2 rounded-lg">
+          Add Income
+        </button>
+      </div>
+
+      <div class="bg-white p-5 rounded-xl shadow-sm">
+        <h2 class="font-semibold text-blue-600 mb-3">Add Expense</h2>
+
+        <input id="expenseAmount" type="number" placeholder="Amount"
+          class="w-full mb-3 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300"/>
+
+        <select id="category"
+          class="w-full mb-3 p-2 border rounded-lg">
+          <option>Food</option>
+          <option>Travel</option>
+          <option>Bills</option>
+          <option>Shopping</option>
+        </select>
+
+        <button onclick="addExpense()"
+          class="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-lg">
+          Add Expense
+        </button>
+      </div>
+
+    </div>
+
+    <div class="md:col-span-2 space-y-6">
+
+      <div class="grid grid-cols-3 gap-4">
+        <div class="bg-white p-4 rounded-xl shadow text-center">
+          <p class="text-gray-500 text-sm">Income</p>
+          <h2 id="incomeDisplay" class="text-green-600 text-xl font-bold">₹0</h2>
+        </div>
+
+        <div class="bg-white p-4 rounded-xl shadow text-center">
+          <p class="text-gray-500 text-sm">Expenses</p>
+          <h2 id="expenseDisplay" class="text-blue-600 text-xl font-bold">₹0</h2>
+        </div>
+
+        <div class="bg-white p-4 rounded-xl shadow text-center">
+          <p class="text-gray-500 text-sm">Balance</p>
+          <h2 id="balanceDisplay" class="text-black text-xl font-bold">₹0</h2>
+        </div>
+      </div>
+
+      <div class="bg-white p-5 rounded-xl shadow flex justify-center">
+        <div class="w-64 h-64">
+          <canvas id="chart"></canvas>
+        </div>
+      </div>
+
+     
+
+  </div>
+<script src="dash.js"></script>
+
+</body>
+</html>
