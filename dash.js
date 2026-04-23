@@ -63,7 +63,6 @@ const logout = () => {
     window.location.href ="index.html"
 }
 
-//expense format "food,bills,travel,shopping,others|10,20,30,40,50"
 
 function addExpense(){
   const amt = parseInt(document.getElementById("expenseAmount").value);
@@ -78,24 +77,3 @@ function addExpense(){
   updateChart();
 }
 
-function formatexpense(a,b,c,d,e,f){
-    const exp ="food,bills,shopping,travel,others|"
-    const items = [a,b,c,d,e,f]
-    let ex = exp.split("|")
-    console.log(ex)
-    for(let i = 0;i<5;i++){
-        ex.push(items[i])
-        ex.push(",")
-    }
-    ex[1] = "|"
-    console.log(ex.join(""))
-}
-
-formatexpense(10,2,4,2,4)
-
-function deformatexpense(str){
-    let a = str.split("|")
-    console.log(a)
-}
-
-deformatexpense("food,bills,shopping,travel,others|10,2,4,2,4,")

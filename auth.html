@@ -57,6 +57,7 @@ function signup(){
   })
   .then(() => {
     localStorage.setItem("user", email);
+    localStorage.setItem("pass" , password)
     window.location.href = "dashboard.html";
   })
   .catch(() => {
